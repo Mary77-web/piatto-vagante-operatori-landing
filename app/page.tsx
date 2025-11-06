@@ -77,7 +77,7 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">
+          <h1 className="text-3xl md:text-6xl font-bold mb-6 font-serif leading-tight">
             La Prima Piattaforma Digitale
             <br />
             Solo per Operatori Campani
@@ -316,8 +316,8 @@ prenotazioni automatiche mentre tu ti dedichi al tuo lavoro o mentre dormi.
               Confronto con Piattaforme Internazionali
             </h3>
             
-            <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-              <table className="w-full">
+            <div className="bg-white rounded-xl shadow-xl overflow-x-auto">
+  <table className="w-full min-w-[600px]">
                 <thead>
                   <tr className="bg-gray-100 border-b-2 border-gray-200">
                     <th className="p-4 text-left text-gray-900 font-semibold">Caratteristica</th>
