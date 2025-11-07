@@ -309,65 +309,140 @@ prenotazioni automatiche mentre tu ti dedichi al tuo lavoro o mentre dormi.
             </div>
 
           </div>
-
-          {/* Comparison Table */}
-          <div className="max-w-4xl mx-auto mt-16">
-            <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
-              Confronto con Piattaforme Internazionali
-            </h3>
-            
-            <div className="bg-white rounded-xl shadow-xl overflow-x-auto">
-  <table className="w-full min-w-[600px]">
-                <thead>
-                  <tr className="bg-gray-100 border-b-2 border-gray-200">
-                    <th className="p-4 text-left text-gray-900 font-semibold">Caratteristica</th>
-                    <th className="p-4 text-center bg-green-50 text-gray-900 font-semibold">Piatto Vagante</th>
-                    <th className="p-4 text-center text-gray-900 font-semibold">TheFork</th>
-                    <th className="p-4 text-center text-gray-900 font-semibold">GetYourGuide</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  <tr className="hover:bg-gray-50">
-                    <td className="p-4 font-semibold text-gray-900">Commissione</td>
-                    <td className="p-4 text-center bg-green-50 font-bold text-green-700">9,5%</td>
-                    <td className="p-4 text-center text-red-600 font-semibold">25%</td>
-                    <td className="p-4 text-center text-red-600 font-semibold">20-25%</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="p-4 font-semibold text-gray-900">Solo Campania</td>
-                    <td className="p-4 text-center bg-green-50 text-2xl">✅</td>
-                    <td className="p-4 text-center text-2xl">❌</td>
-                    <td className="p-4 text-center text-2xl">❌</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="p-4 font-semibold text-gray-900">Onboarding Personalizzato</td>
-                    <td className="p-4 text-center bg-green-50 font-semibold text-green-700">✅ Incluso</td>
-                    <td className="p-4 text-center text-gray-600">❌ Self-service</td>
-                    <td className="p-4 text-center text-gray-600">❌ Self-service</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="p-4 font-semibold text-gray-900">Supporto Dedicato</td>
-                    <td className="p-4 text-center bg-green-50 font-semibold text-green-700">✅ Diretto</td>
-                    <td className="p-4 text-center text-gray-600">❌ Ticket System</td>
-                    <td className="p-4 text-center text-gray-600">❌ Ticket System</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="p-4 font-semibold text-gray-900">Valore Resta Territorio</td>
-                    <td className="p-4 text-center bg-green-50 font-semibold text-green-700">✅ Azienda Campana</td>
-                    <td className="p-4 text-center text-gray-600">❌ Multinazionale</td>
-                    <td className="p-4 text-center text-gray-600">❌ Germania</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Sezione COME FUNZIONA */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
+{/* Comparison Table */}
+<div className="max-w-4xl mx-auto mt-16">
+<h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
+Confronto con Piattaforme Internazionali
+</h3>
+{/* DESKTOP: Tabella classica */}
+<div className="hidden md:block bg-white rounded-xl shadow-xl overflow-hidden">
+<table className="w-full">
+<thead>
+<tr className="bg-gray-100 border-b-2 border-gray-200">
+<th className="p-4 text-left text-gray-900 font-semibold">Caratteristica</th>
+<th className="p-4 text-center bg-green-50 text-gray-900 font-semibold">Piatto Vagante</th>
+<th className="p-4 text-center text-gray-900 font-semibold">TheFork</th>
+<th className="p-4 text-center text-gray-900 font-semibold">GetYourGuide</th>
+</tr>
+</thead>
+<tbody className="divide-y divide-gray-200">
+<tr className="hover:bg-gray-50">
+<td className="p-4 font-semibold text-gray-900">Commissione</td>
+<td className="p-4 text-center bg-green-50 font-bold text-green-700">9,5%</td>
+<td className="p-4 text-center text-red-600 font-semibold">25%</td>
+<td className="p-4 text-center text-red-600 font-semibold">20-25%</td>
+</tr>
+<tr className="hover:bg-gray-50">
+<td className="p-4 font-semibold text-gray-900">Solo Campania</td>
+<td className="p-4 text-center bg-green-50 text-2xl">✅</td>
+<td className="p-4 text-center text-2xl">❌</td>
+<td className="p-4 text-center text-2xl">❌</td>
+</tr>
+<tr className="hover:bg-gray-50">
+<td className="p-4 font-semibold text-gray-900">Onboarding Personalizzato</td>
+<td className="p-4 text-center bg-green-50 font-semibold text-green-700">✅ Incluso</td>
+<td className="p-4 text-center text-gray-600">❌ Self-service</td>
+<td className="p-4 text-center text-gray-600">❌ Self-service</td>
+</tr>
+<tr className="hover:bg-gray-50">
+<td className="p-4 font-semibold text-gray-900">Supporto Dedicato</td>
+<td className="p-4 text-center bg-green-50 font-semibold text-green-700">✅ Diretto</td>
+<td className="p-4 text-center text-gray-600">❌ Ticket System</td>
+<td className="p-4 text-center text-gray-600">❌ Ticket System</td>
+</tr>
+<tr className="hover:bg-gray-50">
+<td className="p-4 font-semibold text-gray-900">Valore Resta Territorio</td>
+<td className="p-4 text-center bg-green-50 font-semibold text-green-700">✅ Azienda Campana</td>
+<td className="p-4 text-center text-gray-600">❌ Multinazionale</td>
+<td className="p-4 text-center text-gray-600">❌ Germania</td>
+</tr>
+</tbody>
+</table>
+</div>
+{/* MOBILE: Card verticali */}
+<div className="md:hidden space-y-6">
+<div className="bg-green-50 rounded-xl shadow-lg p-6 border-2 border-green-200">
+<h4 className="text-xl font-bold text-gray-900 mb-4 text-center">Piatto Vagante</h4>
+<div className="space-y-3">
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Commissione</span>
+<span className="font-bold text-green-700">9,5%</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Solo Campania</span>
+<span className="text-2xl">✅</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Onboarding</span>
+<span className="font-semibold text-green-700">✅ Incluso</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Supporto</span>
+<span className="font-semibold text-green-700">✅ Diretto</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Territorio</span>
+<span className="font-semibold text-green-700 text-sm">✅ Azienda Campana</span>
+</div>
+</div>
+</div>
+<div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<h4 className="text-xl font-bold text-gray-900 mb-4 text-center">TheFork</h4>
+<div className="space-y-3">
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Commissione</span>
+<span className="font-semibold text-red-600">25%</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Solo Campania</span>
+<span className="text-2xl">❌</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Onboarding</span>
+<span className="text-gray-600">❌ Self-service</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Supporto</span>
+<span className="text-gray-600">❌ Ticket System</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Territorio</span>
+<span className="text-gray-600 text-sm">❌ Multinazionale</span>
+</div>
+</div>
+</div>
+<div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<h4 className="text-xl font-bold text-gray-900 mb-4 text-center">GetYourGuide</h4>
+<div className="space-y-3">
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Commissione</span>
+<span className="font-semibold text-red-600">20-25%</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Solo Campania</span>
+<span className="text-2xl">❌</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Onboarding</span>
+<span className="text-gray-600">❌ Self-service</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Supporto</span>
+<span className="text-gray-600">❌ Ticket System</span>
+</div>
+<div className="flex justify-between items-center">
+<span className="font-semibold text-gray-900">Territorio</span>
+<span className="text-gray-600 text-sm">❌ Germania</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+{/* Sezione COME FUNZIONA */}
+<section className="py-20 bg-white">
+<div className="max-w-5xl mx-auto px-6">
           
           {/* Header Sezione */}
           <div className="text-center mb-16">
