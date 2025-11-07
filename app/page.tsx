@@ -140,7 +140,7 @@ export default function Home() {
               </p>
               <div className="mt-4 p-4 bg-red-50 rounded-lg">
                 <p className="text-sm font-semibold text-red-800">
-                  Su €10.000 di prenotazioni annuali:
+                  Su €uro 10.000 di prenotazioni annuali:
                 </p>
                 <p className="text-lg font-bold text-red-900 mt-1">
                   TheFork: €2.500 commissioni
