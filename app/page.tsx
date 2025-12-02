@@ -12,22 +12,18 @@ export default function Home() {
     
     const formData = new FormData(e.currentTarget);
     
-    // Raccogli checkbox preferenze contatto
-    const contactPreferences = [];
-    if (formData.get('contact_email')) contactPreferences.push('Email');
-    if (formData.get('contact_phone')) contactPreferences.push('Telefono');
-    if (formData.get('contact_whatsapp')) contactPreferences.push('WhatsApp');
     
     const data = {
-      fullName: formData.get('fullName'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      businessName: formData.get('businessName'),
-      operatorType: formData.get('operatorType'),
-      zone: formData.get('zone'),
-      contactPreference: contactPreferences.join(', '),
-      notes: formData.get('notes')
-    };
+  fullName: formData.get('fullName'),
+  phone: formData.get('phone'),
+  operatorType: formData.get('operatorType'),
+  // Campi vuoti per compatibilità API
+  email: '',
+  businessName: '',
+  zone: '',
+  contactPreference: 'WhatsApp',
+  notes: ''
+};
 
   try {
   const response = await fetch('/api/lead-operatori', {
@@ -440,6 +436,22 @@ Confronto con Piattaforme Internazionali
 </div>
 </div>
 </section>
+      {/* Mini CTA dopo comparison */}
+<div className="bg-gray-50 py-12">
+  <div className="max-w-2xl mx-auto px-6 text-center">
+    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+      Vuoi saperne di più?
+    </h3>
+    <a 
+      href="https://wa.me/393388065742?text=Ciao!%20Ho%20visto%20la%20landing%20e%20sono%20interessato%20a%20Piatto%20Vagante."
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-lg text-xl font-bold transition-all shadow-lg hover:shadow-xl"
+    >
+      💬 Scrivici su WhatsApp
+    </a>
+  </div>
+</div>
 {/* Sezione COME FUNZIONA */}
 <section className="py-20 bg-white">
 <div className="max-w-5xl mx-auto px-6">
@@ -531,206 +543,134 @@ Confronto con Piattaforme Internazionali
       </section>
 
       {/* Sezione FORM LEAD */}
-      <section className="py-20 bg-gradient-to-b from-red-900 to-black">
-        <div className="max-w-3xl mx-auto px-6">
-          
-          {/* Header Sezione */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-serif">
-              Unisciti ai Primi 30 Founding Operators
-            </h2>
-            <p className="text-xl text-white/90 mb-2">
-              3 Mesi Gratis + Onboarding Premium
-            </p>
-            <p className="text-lg text-yellow-400 font-semibold">
-              Posti rimasti: 23/30
-            </p>
-          </div>
+<section className="py-20 bg-gradient-to-b from-red-900 to-black">
+  <div className="max-w-3xl mx-auto px-6">
+    
+    {/* Header Sezione */}
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-serif">
+        Unisciti ai Primi 30 Founding Operators
+      </h2>
+      <p className="text-xl text-white/90 mb-2">
+        3 Mesi Gratis + Onboarding Premium
+      </p>
+      <p className="text-lg text-yellow-400 font-semibold">
+        Posti rimasti: 23/30
+      </p>
+    </div>
 
-          {/* FORM Card */}
-          <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              
-              {/* Nome e Cognome */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Nome e Cognome *
-                </label>
-                <input 
-                  type="text" 
-                  name="fullName"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-                  placeholder="Mario Rossi"
-                />
-              </div>
+    {/* WhatsApp CTA */}
+    <div className="text-center mb-8">
+      <p className="text-white/80 mb-4 text-lg">Preferisci parlare subito?</p>
+      <a 
+        href="https://wa.me/393388065742?text=Ciao!%20Sono%20interessato%20a%20Piatto%20Vagante.%20Vorrei%20saperne%20di%20più."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-lg text-xl font-bold transition-all shadow-lg hover:shadow-xl"
+      >
+        💬 Scrivici su WhatsApp
+      </a>
+      <p className="text-white/60 text-sm mt-2">Rispondiamo in pochi minuti</p>
+    </div>
 
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Email *
-                </label>
-                <input 
-                  type="email" 
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-                  placeholder="mario@cantina.it"
-                />
-              </div>
+    <div className="text-center text-white/60 mb-8">
+      <span>───── oppure compila il form ─────</span>
+    </div>
 
-              {/* Telefono */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Telefono *
-                </label>
-                <input 
-                  type="tel" 
-                  name="phone"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-                  placeholder="+39 333 123 4567"
-                />
-              </div>
-
-              {/* Nome Attività */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Nome Attività *
-                </label>
-                <input 
-                  type="text" 
-                  name="businessName"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-                  placeholder="Cantina Valle del Taurasi"
-                />
-              </div>
-
-              {/* Tipo Operatore */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Tipo Operatore *
-                </label>
-                <select 
-                  name="operatorType"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-                >
-                  <option value="">-- Seleziona --</option>
-                  <option value="cantina">Cantina Vinicola</option>
-                  <option value="agriturismo">Agriturismo</option>
-                  <option value="oleificio">Oleificio</option>
-                  <option value="caseificio">Caseificio</option>
-                  <option value="cooking">Cooking School</option>
-                  <option value="ristorante">Ristorante</option>
-                  <option value="pizzeria">Pizzeria</option>
-                  <option value="birrificio">Birrificio Artigianale</option>
-                  <option value="cioccolateria">Cioccolateria</option>
-                  <option value="altro">Altro</option>
-                </select>
-              </div>
-
-              {/* Zona Campania */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Dove si trova la tua attività? *
-                </label>
-                <input 
-                  type="text" 
-                  name="zone"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-                  placeholder="Es: Taurasi (AV), Amalfi (SA), Benevento..."
-                />
-                <p className="text-xs text-gray-500 mt-1">
-                  Indica comune e provincia
-                </p>
-              </div>
-
-              {/* Preferenza Contatto */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Come preferisci essere contattato?
-                </label>
-                <div className="flex gap-6">
-                  <label className="flex items-center">
-                    <input type="checkbox" name="contact_email" className="mr-2 w-4 h-4" />
-                    <span className="text-sm text-gray-700">Email</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input type="checkbox" name="contact_phone" className="mr-2 w-4 h-4" />
-                    <span className="text-sm text-gray-700">Telefono</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input type="checkbox" name="contact_whatsapp" className="mr-2 w-4 h-4" />
-                    <span className="text-sm text-gray-700">WhatsApp</span>
-                  </label>
-                </div>
-              </div>
-
-              {/* Note */}
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
-                  Note / Domande (opzionale)
-                </label>
-                <textarea 
-                  name="notes"
-                  rows={3}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
-                  placeholder="Hai domande specifiche o vuoi raccontarci qualcosa sulla tua attività?"
-                ></textarea>
-              </div>
-
-              {/* Privacy Consent */}
-              <div>
-                <label className="flex items-start text-sm text-gray-600">
-                  <input type="checkbox" required className="mr-3 mt-1 w-4 h-4" />
-                  <span>
-                    Acconsento al trattamento dei dati personali secondo la{' '}
-                    <a href="/privacy" className="text-red-800 underline">
-                      Privacy Policy
-                    </a>
-                  </span>
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <button 
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full py-4 rounded-lg text-lg font-bold transition-all shadow-lg hover:shadow-xl ${
-                  isSubmitting 
-                    ? 'bg-gray-400 cursor-not-allowed' 
-                    : 'bg-red-800 text-white hover:bg-red-700'
-                }`}
-              >
-                {isSubmitting ? '⏳ Invio in corso...' : 'Richiedi Demo Gratuita'}
-              </button>
-
-              <p className="text-center text-sm text-gray-500 mt-4">
-                Ti ricontatteremo entro 24 ore per fissare la demo
-              </p>
-            </form>
-          </div>
-
-          {/* Trust Elements */}
-          <div className="mt-12 text-center text-white/80">
-            <p className="mb-4">✅ Zero impegno | ✅ Demo gratuita | ✅ Supporto dedicato</p>
-            <p className="text-sm">
-              Oppure scrivici direttamente:{' '}
-              <a href="mailto:info@piattovagante.it" className="text-white font-semibold underline">
-                info@piattovagante.it
-              </a>
-              <span className="mx-2">|</span>
-              <a href="https://wa.me/393388065742" className="text-white font-semibold underline">
-                WhatsApp: +39 338 806 5742
-              </a>
-            </p>
-          </div>
-
+    {/* FORM Card */}
+    <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl">
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        
+        {/* Nome e Cognome */}
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-700">
+            Nome e Cognome *
+          </label>
+          <input 
+            type="text" 
+            name="fullName"
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
+            placeholder="Mario Rossi"
+          />
         </div>
-      </section>
+
+        {/* WhatsApp */}
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-700">
+            WhatsApp *
+          </label>
+          <input 
+            type="tel" 
+            name="phone"
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
+            placeholder="+39 333 123 4567"
+          />
+        </div>
+
+        {/* Tipo Operatore */}
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-700">
+            Tipo Attività *
+          </label>
+          <select 
+            name="operatorType"
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
+          >
+            <option value="">-- Seleziona --</option>
+            <option value="cantina">Cantina Vinicola</option>
+            <option value="agriturismo">Agriturismo</option>
+            <option value="oleificio">Oleificio</option>
+            <option value="caseificio">Caseificio</option>
+            <option value="cooking">Cooking School</option>
+            <option value="ristorante">Ristorante</option>
+            <option value="pizzeria">Pizzeria</option>
+            <option value="birrificio">Birrificio Artigianale</option>
+            <option value="altro">Altro</option>
+          </select>
+        </div>
+
+        {/* Privacy Consent */}
+        <div>
+          <label className="flex items-start text-sm text-gray-600">
+            <input type="checkbox" required className="mr-3 mt-1 w-4 h-4" />
+            <span>
+              Acconsento al trattamento dei dati personali secondo la{' '}
+              <a href="/privacy" className="text-red-800 underline">
+                Privacy Policy
+              </a>
+            </span>
+          </label>
+        </div>
+
+        {/* Submit Button */}
+        <button 
+          type="submit"
+          disabled={isSubmitting}
+          className={`w-full py-4 rounded-lg text-lg font-bold transition-all shadow-lg hover:shadow-xl ${
+            isSubmitting 
+              ? 'bg-gray-400 cursor-not-allowed' 
+              : 'bg-red-800 text-white hover:bg-red-700'
+          }`}
+        >
+          {isSubmitting ? '⏳ Invio in corso...' : 'Richiedi Demo Gratuita'}
+        </button>
+
+        <p className="text-center text-sm text-gray-500 mt-4">
+          Ti ricontatteremo entro 24 ore per fissare la demo
+        </p>
+      </form>
+    </div>
+
+    {/* Trust Elements */}
+    <div className="mt-12 text-center text-white/80">
+      <p>✅ Zero impegno | ✅ Demo gratuita | ✅ Supporto dedicato</p>
+    </div>
+
+  </div>
+</section>
 
       {/* Popup Successo */}
       {showSuccess && (
