@@ -34,7 +34,7 @@ export default function Home() {
 
   const result = await response.json();
 
-  if (response.status === 200 && result.success === true) {
+  if (response.ok && result.success) {
     setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 5000);
     
