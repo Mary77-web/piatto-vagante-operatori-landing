@@ -92,9 +92,11 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="bg-red-800 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all shadow-lg">
-              📅 Prenota Demo Gratuita
-            </button>
+           <button 
+  onClick={() => document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' })}
+  className="bg-red-800 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all shadow-lg">
+  📩 Richiedi Informazioni
+</button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-red-800 px-8 py-4 rounded-lg text-lg font-semibold transition-all">
               ↓ Scopri di Più
             </button>
@@ -543,7 +545,7 @@ Confronto con Piattaforme Internazionali
       </section>
 
       {/* Sezione FORM LEAD */}
-<section className="py-20 bg-gradient-to-b from-red-900 to-black">
+<section id="form-section" className="py-20 bg-gradient-to-b from-red-900 to-black">
   <div className="max-w-3xl mx-auto px-6">
     
     {/* Header Sezione */}
