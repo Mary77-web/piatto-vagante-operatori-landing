@@ -97,9 +97,11 @@ export default function Home() {
   className="bg-red-800 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all shadow-lg">
   📩 Richiedi Informazioni
 </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-red-800 px-8 py-4 rounded-lg text-lg font-semibold transition-all">
-              ↓ Scopri di Più
-            </button>
+           <button 
+  onClick={() => document.getElementById('problema-section')?.scrollIntoView({ behavior: 'smooth' })}
+  className="border-2 border-white text-white hover:bg-white hover:text-red-800 px-8 py-4 rounded-lg text-lg font-semibold transition-all">
+  ↓ Scopri di Più
+</button>
           </div>
 
           <p className="mt-16 text-sm text-white/60 animate-pulse">
@@ -109,7 +111,7 @@ export default function Home() {
       </section>
 
       {/* Sezione IL PROBLEMA */}
-      <section className="py-20 bg-white">
+     <section id="problema-section" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-serif">
