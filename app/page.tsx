@@ -225,7 +225,7 @@ prenotazioni automatiche mentre tu ti dedichi al tuo lavoro o mentre dormi.
               Pensata per Operatori Campani
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Non siamo l'ennesima piattaforma globale.
+              Non siamo l'ennesima piattaforma globale
               Siamo la prima piattaforma digitale costruita SOLO
               per il turismo enogastronomico campano.
             </p>
