@@ -655,18 +655,18 @@ Confronto con Piattaforme Internazionali
               : 'bg-red-800 text-white hover:bg-red-700'
           }`}
         >
-          {isSubmitting ? '⏳ Invio in corso...' : 'Richiedi Demo Gratuita'}
+          {isSubmitting ? '⏳ Invio in corso...' : 'Richiedi Informazioni'}
         </button>
 
         <p className="text-center text-sm text-gray-500 mt-4">
-          Ti ricontatteremo entro 24 ore per fissare la demo
+          Ti ricontatteremo entro 24 ore lavorative
         </p>
       </form>
     </div>
 
     {/* Trust Elements */}
     <div className="mt-12 text-center text-white/80">
-      <p>✅ Zero impegno | ✅ Demo gratuita | ✅ Supporto dedicato</p>
+      <p>✅ Zero impegno | ✅ Scopri se fa per te | ✅ Supporto dedicato</p>
     </div>
 
   </div>
